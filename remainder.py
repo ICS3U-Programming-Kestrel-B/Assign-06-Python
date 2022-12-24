@@ -10,6 +10,7 @@
 
 import math
 import random
+
 # import lists
 
 
@@ -28,11 +29,13 @@ def calc_remainder(user_num_list, int_divisor):
 
         # adding remainder_num to list
         remainder_list.append(remainder_num)
-        # returning results
-        if counter == num_amount:
-            return remainder_list
-        else:
+        # checking if program ends
+        if counter != num_amount:
             counter = counter + 1
+            continue
+
+    # returning results
+    return remainder_list
 
 
 def main():
@@ -71,7 +74,7 @@ def main():
             # Error message
             print("Please don't enter a decimal or string.")
 
-    while (True):
+    while True:
         # getting divisor
         divisor = input("Enter a divisor: ")
         try:
@@ -81,7 +84,6 @@ def main():
         except ValueError:
             # Error message
             print("Please enter a valid divisor.")
-
 
     # calling function
     division = calc_remainder(user_num_list, int_divisor)
